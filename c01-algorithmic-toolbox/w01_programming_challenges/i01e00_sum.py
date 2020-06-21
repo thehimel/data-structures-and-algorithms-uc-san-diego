@@ -1,5 +1,8 @@
 """
 Given 2 digits, return the sum of them.
+
+Input: 2 5
+Output: 7
 """
 
 
