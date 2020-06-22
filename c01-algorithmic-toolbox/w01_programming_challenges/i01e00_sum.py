@@ -6,10 +6,21 @@ Output: 7
 """
 
 
-def sum_of_two_digits(first_digit, second_digit):
-    return first_digit + second_digit
+def get_sum(x, y):
+    return x + y
+
+
+def test(x, y):
+    ans = x + y
+    print("Pass" if ans == get_sum(x, y) else "Fail")
 
 
 if __name__ == '__main__':
-    a, b = map(int, input().split())
-    print(sum_of_two_digits(a, b))
+    submit = 0
+
+    if submit == 1:
+        x, y = map(int, input().split())
+        print(get_sum(x, y))
+
+    else:
+        test(2, 3)
