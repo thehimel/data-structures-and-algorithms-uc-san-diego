@@ -1,22 +1,34 @@
 """
-Calculate n fibonacci numbers. and return it's last digit.
+Return the last digit of n fibonacci numbers.
 
-TC: O(1)
+Solution:
+https://medium.com/competitive/the-last-digit-of-a-large-fibonacci-number-ea3b12da58bc
+
+Instead of storing the whole Fibonacci number,
+just store their modulus and calculate the next one using that.
+
+TC: O(n)
 SC: O(1)
 """
 
 import sys
 
 
-def fib(n):
-    golden_ratio = (1 + 5 ** 0.5) / 2
-    return int((golden_ratio ** n + 1) / 5 ** 0.5)
-
-
 def fib_last(n):
-    fib_num = fib(n)
-    last_digit = fib_num % 10
-    return last_digit
+    if n <= 1:
+        return 1
+
+    first = 0
+    second = 1
+
+    res = None
+
+    # for (i=2; i<=n; i++)
+    for i in range(2, n+1):
+        res = (first + second) % 10
+        first, second = second, res
+
+    return res
 
 
 def test(input, output):
@@ -37,4 +49,5 @@ if __name__ == "__main__":
         test(3, 2)
         test(12, 4)
         test(30, 0)
-        test(300, 4)
+        test(331, 9)
+        test(327305, 5)
