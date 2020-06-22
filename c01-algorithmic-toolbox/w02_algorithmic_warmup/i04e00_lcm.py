@@ -1,15 +1,38 @@
-# Uses python3
+"""
+Gind LCM of 2 given numbers.
+
+LCM(x, y) = (x * y) / GCD(x, y)
+
+TC: O(n)
+SC: O(1)
+"""
+
+
 import sys
 
-def lcm_naive(a, b):
-    for l in range(1, a*b + 1):
-        if l % a == 0 and l % b == 0:
-            return l
 
-    return a*b
+def gcd(x, y):
+    while(y):
+        x, y = y, x % y
 
-if __name__ == '__main__':
-    input = sys.stdin.read()
-    a, b = map(int, input.split())
-    print(lcm_naive(a, b))
+    return x
 
+
+def lcm(x, y):
+    return (x * y) // gcd(x, y)
+
+
+def test(x, y, output):
+    print("Pass" if output == lcm(x, y) else "Fail")
+
+
+if __name__ == "__main__":
+    submit = 0
+
+    if submit:
+        input = sys.stdin.read()
+        a, b = map(int, input.split())
+        print(lcm(a, b))
+
+    else:
+        test(24, 60, 120)
