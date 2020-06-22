@@ -25,17 +25,22 @@ def compute_min_refills(distance, tank_capacity, stops):
     remaining_fuel = tank_capacity
 
     # for(i=0; i < n-1; i++)
+    # Considering the i+1, we'll run the for loop until the second last index.
     for i in range(stops_count-1):
+        # Sub path that we need to go
         sub_path = stops[i+1] - stops[i]
 
         # If distance between any 2 stops greater than the capacity return -1.
         if sub_path > tank_capacity:
             return -1
 
+        # If our remaining fuel is not enough to cover the sub_path,
+        # refill it, and it becomes fill again.
         if remaining_fuel < sub_path:
             count += 1
             remaining_fuel = tank_capacity
 
+        # After covering the sub_path, our remaining_fuel is reduced
         remaining_fuel -= sub_path
 
     return count
