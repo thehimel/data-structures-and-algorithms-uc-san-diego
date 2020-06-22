@@ -167,7 +167,7 @@ if __name__ == '__main__':
         data = input.split()
         a = data[1:]
         arr = [int(num) for num in a]
-        print(largest_number(arr))
+        print(largest_number(a))
 
     else:
         input = [8, 3, 1, 7, 0, 10, 2]
