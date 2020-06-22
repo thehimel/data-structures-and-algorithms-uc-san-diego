@@ -39,6 +39,9 @@ arr = [21, 2]
 x = 21, y = 2
 xy = '212', yx = '212'
 return xy > yx
+
+TC: O(nlogn)
+SC: O(n)
 """
 
 import sys
