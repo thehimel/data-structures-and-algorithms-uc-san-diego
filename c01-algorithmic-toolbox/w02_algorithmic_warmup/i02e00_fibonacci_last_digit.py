@@ -1,6 +1,10 @@
 """
 Return the last digit of n fibonacci numbers.
 
+Input: 331
+GCD(331)=668996615388005031531000081241745415306766517246774551964595292186469
+Output: 9
+
 Solution:
 https://medium.com/competitive/the-last-digit-of-a-large-fibonacci-number-ea3b12da58bc
 
