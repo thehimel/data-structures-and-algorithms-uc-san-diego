@@ -16,12 +16,6 @@ import sys
 
 def compute_min_refills(distance, tank_capacity, stops):
 
-    # If distance between any 2 stops greater than tank, return -1.
-    # for(i=1; i<length; i++)
-    for i in range(1, len(stops)):
-        if tank_capacity < stops[i] - stops[i-1]:
-            return -1
-
     # We are mutating the stops by adding 0 at the beginning
     # and distance at the end which is our destination.
     stops = [0] + stops + [distance]
@@ -34,9 +28,13 @@ def compute_min_refills(distance, tank_capacity, stops):
     for i in range(stops_count-1):
         sub_path = stops[i+1] - stops[i]
 
+        # If distance between any 2 stops greater than the capacity return -1.
+        if sub_path > tank_capacity:
+            return -1
+
         if remaining_fuel < sub_path:
             count += 1
-            remaining_fuel += tank_capacity
+            remaining_fuel = tank_capacity
 
         remaining_fuel -= sub_path
 
