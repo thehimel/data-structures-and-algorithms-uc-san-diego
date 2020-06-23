@@ -51,7 +51,6 @@ if __name__ == '__main__':
         targets = data[n + 2:]
 
         for target in targets:
-            # replace with the call to binary_search when implemented
             print(binary_search(arr, target), end=' ')
 
     else:
