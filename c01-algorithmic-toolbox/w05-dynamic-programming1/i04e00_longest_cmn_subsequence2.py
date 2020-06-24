@@ -50,12 +50,20 @@ if __name__ == '__main__':
     else:
         a = [2, 7, 5]
         b = [2, 5]
-        test(a, b, 2)
+        output = 2
+        test(a, b, output)
 
         a = [7]
         b = [1, 2, 3, 4]
-        test(a, b, 0)
+        output = 0
+        test(a, b, output)
 
         a = [2, 7, 8, 3]
         b = [5, 2, 8, 7]
-        test(a, b, 2)
+        output = 2
+        test(a, b, output)
+
+        a = []
+        b = []
+        output = 0
+        test(a, b, output)
