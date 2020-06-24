@@ -42,7 +42,7 @@ def dynamic_optimal(n):
             second = optimal_num[i//2 - 1]
 
         first = optimal_num[i - 1 - 1]
-        optimal_num[i - 1] = get_min(first, second, third) + 1
+        optimal_num[i - 1] = get_min(third, second, first) + 1
 
     return optimal_num
 
