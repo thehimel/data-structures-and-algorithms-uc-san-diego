@@ -1,4 +1,7 @@
 """
+Given the weights of items and max amount of the knapsack.
+Find the max weight that can be taken into the knapsack.
+
 0-1 Knapsack Problem with Dynamic Programming
 Complexity Analysis:
 n = Total number of items
