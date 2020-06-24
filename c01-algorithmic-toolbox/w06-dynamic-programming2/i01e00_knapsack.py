@@ -46,6 +46,7 @@ if __name__ == '__main__':
         knapsack_max_weight, n, *items_weight = list(map(int, input.split()))
         items = list()
 
+        # As value is not given, weight is considered as the value
         for weight in items_weight:
             value = weight
             items.append(Item(weight, value))
