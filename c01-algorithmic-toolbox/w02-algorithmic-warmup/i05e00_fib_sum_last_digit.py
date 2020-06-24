@@ -1,5 +1,19 @@
 """
 Problem Statement:
+Retun the last digit of the sum o n fibonacci numbers. In other words,
+Given an integer 𝑛, find the last digit of the sum 𝐹0 + 𝐹1 + · · · + 𝐹𝑛.
+Constraints. 0 ≤ 𝑛 ≤ 107.
+
+Example:
+Input: 3
+Output: 4
+𝐹0 + 𝐹1 + 𝐹2 + 𝐹3 = 0 + 1 + 1 + 2 = 4.
+
+Solution: We just need to add the last digits of all fibonacci numbers than
+return the last digit.
+
+
+Similar Problem Statement:
 Return the last digit of n fibonacci numbers. Constraints. 0 ≤ 𝑛 ≤ 107.
 
 Input: 3
@@ -41,8 +55,16 @@ def fib_last(n):
     return res
 
 
+def fib_sum_last(n):
+    total_sum = 0
+    for i in range(1, n+1):
+        total_sum += fib_last(i)
+
+    return total_sum % 10
+
+
 def test(input, output):
-    print("Pass" if output == fib_last(input) else "Fail")
+    print("Pass" if output == fib_sum_last(input) else "Fail")
 
 
 if __name__ == "__main__":
@@ -51,13 +73,8 @@ if __name__ == "__main__":
     if submit:
         input = sys.stdin.read()
         n = int(input)
-        print(fib_last(n))
+        print(fib_sum_last(n))
 
     else:
-        test(1, 1)
-        test(2, 1)
-        test(3, 2)
-        test(12, 4)
-        test(30, 0)
-        test(331, 9)
-        test(327305, 5)
+        test(3, 4)
+        test(100, 5)
